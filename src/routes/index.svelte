@@ -33,14 +33,13 @@
 	const menus = [
 		{ label: 'Home', path: '#home' },
 		{ label: 'About', path: '#about' },
-		{ label: 'Repository', path: '#repositories' },
-		{ label: 'Resume', path: '/app/resume' }
+		{ label: 'Repository', path: '#repositories' }
 	]
 
 	const socialLinks = [
-		{ label: 'Linkedin', path: '/app/home', icon: 'bi:linkedin' },
+		{ label: 'Linkedin', path: 'https://www.linkedin.com/in/below-bed-3967b3240/', icon: 'bi:linkedin' },
 		{ label: 'Github', path: 'https://github.com/below-1/', icon: 'bi:github' },
-		{ label: 'HackerRank', path: '/app/resume', icon: 'cib:hackerrank' }
+		{ label: 'HackerRank', path: 'https://www.hackerrank.com/jordanmeta', icon: 'cib:hackerrank' }
 	]
 
 	const buzzwords = [
