@@ -16,8 +16,6 @@
 	export let portfolios: { items: Portfolio[] };
 	export let activities: Activity[] = [];
 
-	console.log(activities);
-
 	let showHiThere = false;
 	let showItsMe = false;
 	let showName = false;
@@ -146,8 +144,8 @@
 	<div class="px-4 py-12 md:py-none md:px-none md:w-3/4 md:mx-auto flex flex-col md:flex-row">
 
 		<div class="w-full md:w-1/3 flex justify-center items-center">
-			<img
-				src={`https://avatars.dicebear.com/api/human/26.svg`}
+			<div
+				style="background: url(/joavatar.jpg); background-position: 50% 90%; background-size: cover;"
 				class="w-48 h-48 md:w-64 md:h-64 rounded-full"
 			/>
 		</div>
@@ -176,14 +174,36 @@
 
 <div 
 	id="activities"
-	class="py-24 md:w-2/5 md:mx-auto"
+	class="py-24 bg-jobg"
 >
-	<div class="text-4xl md:text-5xl font-bold mb-8 text-center underline">My Activities</div>
-	<div class="flex flex-col">
-		{#each activities as activity}
-			<ActivityItem
-				{activity}
-			/>
-		{/each}
+	<div class="md:w-2/5 md:mx-auto">
+		<div class="text-4xl md:text-5xl font-bold mb-8 text-center underline">My Activities</div>
+		<div class="flex flex-col">
+			{#each activities as activity}
+				<ActivityItem
+					{activity}
+				/>
+			{/each}
+		</div>
 	</div>
 </div>
+
+<footer class="bg-joblack py-24 px-4">
+	<div class="md:w-1/3 md:mx-auto flex flex-col gap-y-4">
+		<a 
+			href="https://github.com/below-1"
+			class="bg-joyellow px-6 py-2 rounded flex items-center justify-center gap-x-4 text-black"
+		>
+			<Icon icon="bi:github" class="w-6 h-6"/>
+			<div class="text-xl font-bold">Follow on Github</div>
+		</a>
+		<a 
+			class="bg-joyellow px-6 py-2 rounded flex items-center justify-center gap-x-4 text-black"
+			href="mailto:jordanmeta4677@gmail.com"
+		>
+			<Icon icon="mdi:gmail" class="w-6 h-6"/>
+			<div class="text-xl font-bold">Contact Me</div>
+		</a>
+		<div class="text-lg text-jocrem text-center mt-8">copyright © Jordan Meta, {(new Date()).getFullYear()}</div>
+	</div>
+</footer>
