@@ -61,8 +61,8 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Jordan Meta's Personal Site</title>
+	<meta name="description" content="Information about Jordan Meta. Software Developer from Nusa Tenggara Timur" />
 </svelte:head>
 
 <div id="home" class="flex flex-wrap">
