@@ -7,6 +7,7 @@ const config = {
         joyellow: '#facc15',
         joblack: '#402e32',
         jobg: '#fff9ee',
+        jocrem: '#ffefca'
       }
     },
   },

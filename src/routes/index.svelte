@@ -3,16 +3,20 @@
 </script>
 
 <script lang="ts">
-	import type { Portfolio } from '$src/types';
+	import type { Portfolio, Activity } from '$src/types';
 
 	import { onMount } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
 	import RepoItem from '$lib/RepoItem.svelte';
 	import PortfolioGrid from './portfolios/_PortfolioGrid.svelte';
+	import ActivityItem from './activities/_ActivityItem.svelte'
 
 	export let top_repositories: any[] = [];
 	export let portfolios: { items: Portfolio[] };
+	export let activities: Activity[] = [];
+
+	console.log(activities);
 
 	let showHiThere = false;
 	let showItsMe = false;
@@ -33,7 +37,8 @@
 	const menus = [
 		{ label: 'Home', path: '#home' },
 		{ label: 'About', path: '#about' },
-		{ label: 'Repository', path: '#repositories' }
+		{ label: 'Portifolio', path: '#portfolios' },
+		{ label: 'Activities', path: '#activities' },
 	]
 
 	const socialLinks = [
@@ -64,7 +69,7 @@
 
 <div id="home" class="flex flex-wrap">
 	<section class="h-screen bg-yellow-300 flex flex-col px-4 w-full md:w-1/2 md:px-6">
-		<nav class="h-14 flex flex gap-x-6 w-full md:mx-auto">
+		<nav class="h-32 flex flex items-center gap-x-6 w-full md:mx-auto">
 			{#each menus as menu}
 				<a 
 					href={menu.path}
@@ -99,7 +104,7 @@
 				{/if}
 			</div>
 		</div>
-		<nav class="h-14 flex flex gap-x-6 w-full md:mx-auto">
+		<nav class="h-32 flex flex gap-x-6 w-full md:mx-auto">
 			{#each socialLinks as menu}
 				<a 
 					href={menu.path}
@@ -134,32 +139,30 @@
 	</section>
 </div>
 
-<section id="about" class="min-h-screen w-full bg-jobg flex items-center justify-center flex-col">
+<section id="about" class="min-h-screen w-full bg-jobg flex items-center justify-center flex-col py-24 md:py-none">
 
 	<h1 class="title underline text-4xl font-bold">About Me</h1>
 
-	<div class="px-4 py-12 md:py-none md:px-none md:w-3/4 md:mx-auto flex">
+	<div class="px-4 py-12 md:py-none md:px-none md:w-3/4 md:mx-auto flex flex-col md:flex-row">
 
-		<div class="md:w-1/3">
+		<div class="w-full md:w-1/3 flex justify-center items-center">
 			<img
 				src={`https://avatars.dicebear.com/api/human/26.svg`}
-				class="w-64 h-64 rounded-full"
+				class="w-48 h-48 md:w-64 md:h-64 rounded-full"
 			/>
 		</div>
-		<div class="md:w-2/3 text-sm md:text-xl flex flex-col gap-y-6 font-medium">
+		<div class="w-full md:w-2/3 text-sm md:text-xl flex flex-col gap-y-6 font-medium">
 			<p class="leading-8">Jordan Meta is passionate programmer from Nusa Tenggara Timur, Indonesia. 
 				He has written code for multiple languages including JavaScript/Typescript, Java, Python and a litle bit of Go. He has extensive experience working in the web, especially in node js ecosystem.</p>
 			<p class="leading-8">He likes to learn new technology. At time of writing, he's learning svelte and golang. And will likely to create couple of projects in those framework/language in future</p>
 		</div>
 
 	</div>
-
 </section>
 
 <div 
-	id="repositories" 
-	class="flex flex-col justify-center items-center min-h-screen py-12 md:py-none"
-	style="background: #ffefca;"
+	id="portfolios" 
+	class="flex flex-col justify-center items-center min-h-screen py-24 md:py-none bg-jocrem"
 >
 	<div 
 		class="text-4xl md:text-5xl font-bold mb-8 text-center underline"
@@ -169,4 +172,18 @@
 	<PortfolioGrid
 		items={portfolios.items}
 	/>
+</div>
+
+<div 
+	id="activities"
+	class="py-24 md:w-2/5 md:mx-auto"
+>
+	<div class="text-4xl md:text-5xl font-bold mb-8 text-center underline">My Activities</div>
+	<div class="flex flex-col">
+		{#each activities as activity}
+			<ActivityItem
+				{activity}
+			/>
+		{/each}
+	</div>
 </div>

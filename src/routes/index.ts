@@ -1,6 +1,7 @@
 import type { RequestEvent } from "@sveltejs/kit";
 // import octo from '$src/octo';
 import * as PortfolioService from '$src/services/portfolio';
+import * as ActivityService from '$src/services/activities';
 
 export async function get(event: RequestEvent) {
   // const response = await octo.request("GET /users/below-1/repos", {
@@ -11,10 +12,11 @@ export async function get(event: RequestEvent) {
   // })
   // const top_repositories = response.data;
   const portfolios = await PortfolioService.search('', 3);
-  console.log(portfolios);
+  const activities = await ActivityService.getActivities();
   return {
     body: {
-      portfolios
+      portfolios,
+      activities
     }
   }
 }
