@@ -1,10 +1,3 @@
-export interface Portfolio {
-  id: string;
-  title: string;
-  avatar?: string;
-  description: string;
-  markdown_url?: string;
-}
 
 export interface Activity {
   id: string;
@@ -14,4 +7,11 @@ export interface Activity {
   payload: any;
   public: boolean;
   created_at: string;
+}
+
+export type Portfolio = {
+  title: string;
+  url?: string;
+  description: Array<string>;
+  pictures: Array<string>;
 }

@@ -8,12 +8,13 @@
 	import { onMount } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
-	import RepoItem from '$lib/RepoItem.svelte';
-	import PortfolioGrid from './portfolios/_PortfolioGrid.svelte';
+	// import RepoItem from '$lib/RepoItem.svelte';
+	// import PortfolioGrid from './portfolios/_PortfolioGrid.svelte';
+	import CarouselPictures from '$lib/CarouselPictures.svelte'
+	import CarouselText from '$lib/CarouselText.svelte'
 	import ActivityItem from './activities/_ActivityItem.svelte'
 
-	export let top_repositories: any[] = [];
-	export let portfolios: { items: Portfolio[] };
+	import { portfolios } from '$src/data'
 	export let activities: Activity[] = [];
 
 	let showHiThere = false;
@@ -67,16 +68,6 @@
 
 <div id="home" class="flex flex-wrap">
 	<section class="h-screen bg-yellow-300 flex flex-col px-4 w-full md:w-1/2 md:px-6">
-		<nav class="h-32 flex flex items-center gap-x-6 w-full md:mx-auto">
-			{#each menus as menu}
-				<a 
-					href={menu.path}
-					class="py-4 font-bold border-b-2 border-black text-center"
-				>
-					{menu.label}
-				</a>
-			{/each}
-		</nav>
 		<div class="flex-grow flex flex-col items-center justify-center">
 			<div class="flex flex-col justify-center w-full">
 				{#if showHiThere}
@@ -158,7 +149,33 @@
 	</div>
 </section>
 
-<div 
+<section id="portfolios" class="min-h-screen w-full bg-jobg flex items-center justify-center flex-col py-24 md:py-none">
+	<h2 class="text-4xl md:text-6xl font-bold text-center mb-24 underline">PORTFOLIOS</h2>
+
+	{#each portfolios as portfolio}
+		<div class="w-4/5 mx-auto py-12 flex flex-col">
+			<h3 class="md:w-1/2 md:mx-auto text-4xl font-bold text-gray-800 text-center mb-6">{portfolio.title}</h3>
+			
+			<div class="flex flex-col md:flex-row gap-6 w-full">
+
+				<div class="w-full md:w-1/2 md:h-auto h-[300px]">
+					<CarouselPictures
+						pictures={portfolio.pictures}
+					/>
+				</div>
+				
+				<div class="w-full md:w-1/2 h-[300px]">
+					<CarouselText
+						items={portfolio.description}
+					/>
+				</div>
+			</div>
+		</div>
+	{/each}
+	
+</section>
+
+<!-- <div 
 	id="portfolios" 
 	class="flex flex-col justify-center items-center min-h-screen py-24 md:py-none bg-jocrem"
 >
@@ -170,7 +187,7 @@
 	<PortfolioGrid
 		items={portfolios.items}
 	/>
-</div>
+</div> -->
 
 <div 
 	id="activities"
