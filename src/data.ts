@@ -1,6 +1,7 @@
 export const portfolios = [
   {
     title: 'Sistem Absensi Online Kementrian Perhubungan NTT',
+    url: 'https://siabs-v2.vercel.app/',
     description: [
       'Sebuah sistem web yang dirancang khusus untuk memenuhi pengawasan kinerja Kementrian Perhubungan NTT',
       'Fitur yang dimiliki antara lain adalah; aggregasi data per hari, bulan, tahun, pegawai, dan unit kerja',
@@ -13,6 +14,7 @@ export const portfolios = [
   },
   {
     title: 'Sistem Pendukung Keputusan Penerima Bantuan Diakonia',
+    url: 'https://diakonia-silo.vercel.app/',
     description: [
       'Applikasi pendukung keputusan yang digunakan Jemaat GMIT Silo Naikoten 1 dalam menentukan penerima bantuan diakonia',
       'Sistem ini menggunakan Algoritma Profile Matching dalam penentuan penerima. Dibangun menggunakan toolsmodern seperti Framework React dan Arsitektur Serverless',
@@ -27,6 +29,7 @@ export const portfolios = [
   },
   {
     title: 'Situs Pengadilan Negeri Maumere',
+    url: 'https://pn-maumere.go.id/',
     description: [
       'Web Site Resmi Pengadilan Negeri Maumere',
       'Menggunakan Bahasa Program PHP versi 7. Framework CodeIgniter versi 5',
@@ -44,6 +47,7 @@ export const portfolios = [
   },
   {
     title: 'Quick Photography Kupang',
+    url: 'https://dedi-nubatonis.github.io/',
     description: [
       'Salah satu Studio Foto di kota kupang',
       'Website dibuat menggunakan Framework Vue.js dan MongoDB',
@@ -60,6 +64,7 @@ export const portfolios = [
   },
   {
     title: 'Website Penentuan Wisata Kab. Malaka',
+    url: 'https://wisata-app.herokuapp.com/',
     description: [
       'Dibuat Menggunakan Platform Node.js',
       'Database yang digunakan adalah MongoDB',

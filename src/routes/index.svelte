@@ -134,13 +134,13 @@
 
 	<div class="px-4 py-12 md:py-none md:px-none md:w-3/4 md:mx-auto flex flex-col md:flex-row">
 
-		<div class="w-full md:w-1/3 flex justify-center items-center">
+		<div class="w-full md:w-1/3 flex justify-center items-center mb-6 md:mb-none">
 			<div
 				style="background: url(/joavatar.jpg); background-position: 50% 90%; background-size: cover;"
 				class="w-48 h-48 md:w-64 md:h-64 rounded-full"
 			/>
 		</div>
-		<div class="w-full md:w-2/3 text-sm md:text-xl flex flex-col gap-y-6 font-medium">
+		<div class="w-full px-6 md:px-none md:w-2/3 text-sm md:text-xl flex flex-col gap-y-6 font-medium">
 			<p class="leading-8">Jordan Meta is passionate programmer from Nusa Tenggara Timur, Indonesia. 
 				He has written code for multiple languages including JavaScript/Typescript, Java, Python and a litle bit of Go. He has extensive experience working in the web, especially in node js ecosystem.</p>
 			<p class="leading-8">He likes to learn new technology. At time of writing, he's learning svelte and golang. And will likely to create couple of projects in those framework/language in future</p>
@@ -154,7 +154,10 @@
 
 	{#each portfolios as portfolio}
 		<div class="w-4/5 mx-auto py-12 flex flex-col">
-			<h3 class="md:w-1/2 md:mx-auto text-4xl font-bold text-gray-800 text-center mb-6">{portfolio.title}</h3>
+			<a 
+				href={portfolio.url}
+				target="_blank"
+				class="md:w-1/2 md:mx-auto text-3xl md:text-4xl font-bold text-gray-600 text-center mb-6 transition-all active:text-joblack hover:text-joblack active:underline hover:underline">{portfolio.title}</a>
 			
 			<div class="flex flex-col md:flex-row gap-6 w-full">
 
